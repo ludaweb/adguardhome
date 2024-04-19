@@ -6,14 +6,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-adguardhome2
-PKG_VERSION:=1.8-20221120
+PKG_VERSION:=1.8-20240420
 PKG_RELEASE:=1
 PKG_MAINTAINER:=<https://github.com/rufengsuixing/luci-app-adguardhome>
 
-LUCI_TITLE:=LuCI app for adguardhome
+LUCI_TITLE:=LuCI app for adguardhome2
 LUCI_DEPENDS:=+!wget&&!curl&&!wget-ssl:curl
 LUCI_PKGARCH:=all
-LUCI_DESCRIPTION:=LuCI support for adguardhome
+LUCI_DESCRIPTION:=LuCI support for adguardhome2
 
 define Package/luci-app-adguardhome2/conffiles
 /usr/share/AdGuardHome2/links.txt
