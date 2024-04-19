@@ -26,9 +26,9 @@ check_latest_version(){
 	check_wgetcurl
 	echo -e "Check for update..."
 	if [ "$tagname" = "beta" ]; then
-		latest_ver="$(echo `$downloader - https://api.github.com/repos/AdguardTeam/AdGuardHome2/releases 2>/dev/null|grep -E '(tag_name|prerelease)'`|sed 's#"tag#\n"tag#g'|grep "true"|head -n1|cut -d '"' -f4 2>/dev/null)"
+		latest_ver="$(echo `$downloader - https://api.github.com/repos/AdguardTeam/AdGuardHome/releases 2>/dev/null|grep -E '(tag_name|prerelease)'`|sed 's#"tag#\n"tag#g'|grep "true"|head -n1|cut -d '"' -f4 2>/dev/null)"
 	else
-		latest_ver="$($downloader - https://api.github.com/repos/AdguardTeam/AdGuardHome2/releases/latest 2>/dev/null|grep -E 'tag_name'|head -n1|cut -d '"' -f4 2>/dev/null)"
+		latest_ver="$($downloader - https://api.github.com/repos/AdguardTeam/AdGuardHome/releases/latest 2>/dev/null|grep -E 'tag_name'|head -n1|cut -d '"' -f4 2>/dev/null)"
 	fi
 	if [ -z "${latest_ver}" ]; then
 		echo -e "\nFailed to check latest version, please try again later."  && EXIT 1
