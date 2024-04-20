@@ -1,8 +1,0 @@
-#!/bin/sh
-
-AdGuardHome2_enable=$(uci get AdGuardHome2.AdGuardHome2.enabled)
-redirect=$(uci get AdGuardHome2.AdGuardHome2.redirect)
-
-if [ $AdGuardHome2_enable -eq 1 -a "$redirect" == "redirect" ]; then
-	/etc/init.d/AdGuardHome2 do_redirect 1
-fi
